@@ -1,20 +1,20 @@
 #include <Servo.h>
 
 /*
- * NunchuckPrint
+ * NunchuckSerial
  *
- * 2007 Tod E. Kurt, http://todbot.com/blog/
+ * 2013 Tomaz Nati, Renato
  *
- * The Wii Nunchuck reading code is taken from Windmeadow Labs
- *   http://www.windmeadow.com/node/42
+ * 
+ *  
  */
  
 #include <Wire.h>
 uint8_t ctrlr_type[6];
 int ledPin = 13;
-int servoPin = 7;      // Control pin for servo motor
+int servoPin = 7;      // Control pin 
 
-int pulseWidth = 0;    // Amount to pulse the servo
+int pulseWidth = 0;    // Amount to pulse 
 int refreshTime = 20;  // the time in millisecs needed in between pulses
 long lastPulse=0;
 int minPulse = 700;   // minimum pulse width
@@ -286,8 +286,7 @@ Serial.print(((((accel_x_axis/(accel_x_axis^2 +accel_y_axis^2 +accel_z_axis^2   
   i++;
 }
 
-// Encode data to format that most wiimote drivers except
-// only needed if you use one of the regular wiimote drivers
+
 char nunchuk_decode_byte (char x)
 {
   x = (x ^ 0x17) + 0x17;
